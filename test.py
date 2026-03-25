@@ -12,31 +12,37 @@ df['release_year'] = df['release_date'].dt.year
 df['release_quarter'] = df['release_date'].dt.to_period('Q').astype(str)
 
 # 3. 計算關鍵指標
-# 好評率 (用你清單中的 positive 和 negative)
+# 好評率 (用清單中的 positive 和 negative)
 df['total_reviews'] = df['positive'] + df['negative']
 df['positive_rate'] = (df['positive'] / df['total_reviews']).replace(np.nan, 0)
 
-# 4. 價格區間分類 (讓 20 年價格演變更易讀)
+# 4. 價格區間分類 (不含數字編號，但新增一個排序用的索引欄位)
 def price_category(price):
-    if price == 0: return 'Free'
-    elif price < 10: return '< $10'
-    elif price < 30: return '$10 - $30'
-    elif price < 60: return '$30 - $60'
-    else: return 'AAA ($60+)'
+    if price == 0: return 'Free', 1
+    elif price < 10: return '< $10', 2
+    elif price < 30: return '$10 - $30', 3
+    elif price < 60: return '$30 - $60', 4
+    else: return 'AAA ($60+)', 5
 
-df['price_tier'] = df['price'].apply(price_category)
+# 同時產生「名稱」與「順序」兩個欄位
+df['price_tier'], df['price_sort'] = zip(*df['price'].apply(price_category))
 
-# 5. 標籤與類型拆解 (關鍵步驟：處理多對多關係)
-# 我們需要一張單獨的表來存標籤，這樣才能在 Power BI 做篩選
+# 5. 標籤與類型拆解 (修正版)
 tags_expanded = df[['appid', 'tags']].copy()
-tags_expanded['tags'] = tags_expanded['tags'].str.split(',') # 假設是用逗號隔開
-tags_expanded = tags_expanded.explode('tags').dropna()
+# 處理 [] 並移除所有括號與引號
+tags_expanded['tags'] = tags_expanded['tags'].astype(str).replace("[]", "Uncategorized")
+tags_expanded['tags'] = tags_expanded['tags'].str.replace(r"[\[\]{}'\"]", "", regex=True)
+# 拆分、展開、去空格
+tags_expanded['tags'] = tags_expanded['tags'].str.split(',').explode('tags').str.strip()
+# 過濾空字串
+tags_expanded = tags_expanded[tags_expanded['tags'] != ""].dropna()
 
 # 6. 儲存結果
 # 儲存主表 (移除掉太長的描述欄位以節省空間)
 cols_to_keep = ['appid', 'name', 'release_date', 'release_year', 'release_quarter', 
                 'price', 'price_tier', 'positive', 'negative', 'total_reviews', 
-                'positive_rate', 'estimated_owners', 'average_playtime_forever', 'developers', 'publishers']
+                'positive_rate', 'estimated_owners', 'average_playtime_forever', 
+                'developers', 'publishers','price_sort']
 df_final = df[cols_to_keep]
 
 df_final.to_csv('games_20year_main.csv', index=False)
