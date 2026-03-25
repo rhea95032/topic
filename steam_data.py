@@ -115,15 +115,15 @@ lang_map = {
     'Unknown': '未知語言'
 }
 
-# 執行翻譯
-langs_df['支援語言 (Language)'] = langs_df['language_name'].map(lang_map).fillna(langs_df['language_name'])
+# 1. 執行翻譯
+# 使用 map 時，不在 lang_map 裡的語言會變成 NaN (空值)
+langs_df['支援語言 (Language)'] = langs_df['language_name'].map(lang_map)
 
-# 最後過濾無效列
-langs_df = langs_df[langs_df['支援語言 (Language)'].str.strip() != ""]
+# 2. 只保留在字典裡的熱門語言，過濾掉其餘冷門語言
+langs_df = langs_df.dropna(subset=['支援語言 (Language)'])
 
-# 儲存
+# 3. 儲存
 langs_df[['appid', '支援語言 (Language)']].to_csv('games_languages_dimension.csv', index=False, encoding='utf-8-sig')
-
 
 # 8. 儲存結果
 cols_to_keep = [
