@@ -4,7 +4,7 @@ https://www.kaggle.com/datasets/artermiloff/steam-games-dataset/data
 https://zh.wikipedia.org/zh-tw/Steam
 
 ---------------------------------------------------------------------------------
-1. 專題題目建議
+1. 專題題目
 《Steam 27 年產業進化論：從 3A 大作到獨立遊戲爆發的數據轉型》
 
 目標： 透過數據證明 Steam 如何從一個少數開發商的平台，演變成全球最大的獨立遊戲戰場。
