@@ -9,14 +9,13 @@ https://zh.wikipedia.org/zh-tw/Steam
 
 目標： 透過數據證明 Steam 如何從一個少數開發商的平台，演變成全球最大的獨立遊戲戰場。
 
-2. 資料集核心維度分析
-這份 CSV 的欄位雖然看似簡單，但結合起來非常有故事性：
+2. 資料集維度分析
 
-Release Date: 這是你的 X 軸，用來製作歷年趨勢。
+Release Date: 用來製作歷年趨勢。
 
-Price: 分析定價策略的演變（例如：Free to Play 遊戲比例是否逐年增加？）。
+Price: 分析定價策略的演變
 
-Estimated Owners: 雖然是估計值，但這是衡量「商業成功」最重要的指標。
+Estimated Owners: 雖然是估計值，衡量「商業成功」最重要的指標。
 
 Tags/Genres: 這是技術難點，需要用 Python 拆解，用來分析「題材流行週期」。
 

@@ -42,7 +42,7 @@ def price_category(price):
     else: return 'AAA ($60+)', 5
 df['price_tier'], df['price_sort'] = zip(*df['price'].apply(price_category))
 
-# 5. 【核心修正】標籤維度表 (Tags Dimension)
+# 5. 標籤維度表 (Tags Dimension)
 # 使用 ast.literal_eval 精準解析字典，避免正則表達式導致的資料位移
 def safe_parse_tags(tags_str):
     try:
