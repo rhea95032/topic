@@ -4,7 +4,7 @@ import re
 import ast
 
 # 1. 讀取原始資料
-# 確保路徑正確，如果檔案在不同資料夾請自行調整
+# 確保路徑正確
 df = pd.read_csv('dataset/games_march2025_cleaned.csv')
 
 # 2. 日期清理與轉換
