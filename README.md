@@ -1,4 +1,4 @@
-# 🚀 Steam 全球遊戲市場分析專題 (1997-2024)
+# 🚀 Steam 全球遊戲市場分析專題 (2003-2024)
 
 ![Project Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 ![Power BI](https://img.shields.io/badge/Visual-Power_BI-blue?style=for-the-badge&logo=powerbi)
@@ -48,7 +48,7 @@
     * 步驟一：開啟 `steam遊戲趨勢.pbit` 檔案。
     * 步驟二：在跳出的 **「資料檔案路徑來源」** 視窗中，輸入您電腦中 `.csv` 檔案的**完整絕對路徑**。
     * *提示：在 Windows 中對檔案按 `Shift + 右鍵` 選擇「複製為路徑」最為準確。*
-    💡 **範例路徑參考：** `C:\TopPJ\topic\dataset\`  
+    * 💡 **範例路徑參考：** `C:\TopPJ\topic\dataset\`  
     * （注意：請確保路徑結尾包含反斜線 `\`，且資料夾內含 4 個必要的 CSV 檔案。）
 4.  **生成報表**：點擊「載入」後，系統將自動完成數據對接並呈現分析畫面。
 
