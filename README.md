@@ -35,7 +35,7 @@
 
 | 首頁 | 策略 | 熱度 | 週期 | 語言 | 定價 |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-|![Dashboard Mockup](image/pbi首頁.png)|![Dashboard Mockup](image/pbi第一頁.png)|![Dashboard Mockup](image/pbi第二頁.png)|![Dashboard Mockup](image/pbi第三頁.png)|![Dashboard Mockup](image/pbi第四頁.png)|![Dashboard Mockup](image/pbi第五頁.png)|
+|![Dashboard Mockup](image/pbi首頁.png)|![Dashboard Mockup](image/pbi_1.png)|![Dashboard Mockup](image/pbi_2.png)|![Dashboard Mockup](image/pbi_3.png)|![Dashboard Mockup](image/pbi_4.png)|![Dashboard Mockup](image/pbi_5.png)|
 ---
 
 ## 🚀 快速上手步驟 (Quick Start)
