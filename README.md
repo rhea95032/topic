@@ -33,9 +33,9 @@
 ---
 ## 🖼️ 報表預覽 (Dashboard Preview)
 
-| 首頁 | 銷售 | 客群 |
-| :---: | :---: | :---: |
-|![Dashboard Mockup](image/pbi首頁.png)|![Dashboard Mockup](image/pbi第一頁.png)|![Dashboard Mockup](image/pbi第二頁.png)|
+| 首頁 | 策略 | 熱度 | 週期 | 語言 | 定價 |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+|![Dashboard Mockup](image/pbi首頁.png)|![Dashboard Mockup](image/pbi第一頁.png)|![Dashboard Mockup](image/pbi第二頁.png)|![Dashboard Mockup](image/pbi第三頁.png)|![Dashboard Mockup](image/pbi第四頁.png)|![Dashboard Mockup](image/pbi第五頁.png)|
 ---
 
 ## 🚀 快速上手步驟 (Quick Start)
@@ -52,7 +52,8 @@
 
 ---
 
-## 👤 作者
-* **鄭朝元** | 朝陽科技大學 資訊管理系
 ## 🤝 個人首頁 (Contact)
 [個人首頁](https://rhea95032.github.io/)
+
+## 👤 作者
+* **鄭朝元** | 朝陽科技大學 資訊管理系
